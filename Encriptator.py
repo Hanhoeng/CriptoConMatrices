@@ -45,12 +45,20 @@ class Desencriptar():
 
         def split_list(lst:list):
             n=3
+            while len(lst)%3!=0:
+                lst.append(' ')
+                pass
+            for i in range(0,len(lst),n):
+                yield lst[i:i + n]
+            '''
+            
             if len(list(lst))%3==0:
                 for i in range(0, len(lst), n): 
                     yield lst[i:i + n]
             else:
                 lst.append(" ")
-                return split_list(lst)
+            return split_list(lst)
+            '''
 
         listaVectores = list(split_list(lista))
         listaVectoresResultantes = []
@@ -62,7 +70,7 @@ class Desencriptar():
         final = []
         for i in range(len(listaVectoresResultantes)):
             for j in listaVectoresResultantes[i]:
-                final.append(round(j,0))
+                final.append(int(round(j,0)))
         mensaje.setDesencriptacion(final)
 
 
@@ -81,12 +89,27 @@ class Encriptador():
         #hasta que sea modular de 3
         def split_list(lst:list):
             n=3
+            while len(lst)%n != 0:
+                lst.append(0)
+            for i in range(0,len(lst),n):
+                yield lst[i:i + n]
+            '''
+            if len(lst) != 0:
+                while len(lst)%3!=0:
+                    lst.append(' ')
+            else:
+            '''
+                
+            
+            '''
+            
             if len(list(lst))%3==0:
                 for i in range(0, len(lst), n): 
                     yield lst[i:i + n]
             else:
                 lst.append(" ")
-                return split_list(lst)
+            return split_list(lst)
+            '''
         listaVectores = list(split_list(listaNumeros))
         listaVectoresResultantes = []
         matriz = np.array(matriz)

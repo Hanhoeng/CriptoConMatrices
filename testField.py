@@ -51,7 +51,7 @@ vector1.setVector(x1x2x3b)
 print(vector1)
 ##funciona
 '''
-
+'''
 texto = 'texto de prueba'
 mensaje = Mensaje(texto)
 traductor = Diccionario()
@@ -71,8 +71,13 @@ print(encriptacion.encriptar(mensaje,arr))
 print(mensaje)
 print(desencriptacion.desencriptar(mensaje,arr))
 print(mensaje)
-
+'''
 '''
 x = 20.999999999999996
 print(round(x,0))
 '''
+a = [0,0,0,0]
+while len(a)%3 != 0:
+    a.append(0)
+
+print(a)
